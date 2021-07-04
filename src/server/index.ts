@@ -6,16 +6,16 @@ import { renderApp } from './modules/render-app';
 const app = express();
 const port = 3000;
 
-app.use('/', express.static(path.join(__dirname)))
-
 app.get('/', async (req, res) => {
   const html = await readHtmlSource();
-  const app = renderApp();
+  const appString = renderApp();
 
-  const htmlWithReactApp = html.replace('{{APP}}', app);
+  const htmlWithReactApp = html.replace('{{APP}}', appString);
 
   res.send(htmlWithReactApp);
 });
+
+app.use('/', express.static(path.join(__dirname)));
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);

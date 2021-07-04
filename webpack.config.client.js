@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  name: "client",
   mode: "production",
   entry: "./src/client/index.tsx",
   output: {

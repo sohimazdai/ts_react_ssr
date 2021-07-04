@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build:client": "webpack --config webpack.config.client.js",
-    "build:server": "webpack --config webpack.config.server.js"
+    "build:server": "webpack --config webpack.config.server.js",
+    "build:ssr": "webpack --config webpack.config.client.js && webpack --config webpack.config.server.js",
+    "ssr": "node dist/server.js",
+    "dev": "node dev.js"
   },
   "repository": {
     "type": "git",
